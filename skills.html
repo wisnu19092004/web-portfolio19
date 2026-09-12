@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skills & Kemampuan | Wisnu Dwi Haryanto</title>
+  <script>
+    if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  </script>
+  <link rel="stylesheet" href="./src/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-glow-radial">
+
+  <!-- TOP NAVBAR -->
+  <header class="sticky top-0 z-50 glass-nav">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        
+        <a href="index.html" class="flex items-center gap-2.5 group">
+          <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-cyan-500 to-indigo-600 flex items-center justify-center text-white font-bold shadow-md shadow-cyan-500/20 group-hover:scale-105 transition-transform">
+            <span>&lt;/&gt;</span>
+          </div>
+          <span class="font-bold text-lg tracking-tight text-slate-800 dark:text-white">
+            Wisnu<span class="text-cyan-500">.dev</span>
+          </span>
+        </a>
+
+        <nav class="hidden md:flex items-center space-x-1">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="about.html" class="nav-link">About</a>
+          <a href="skills.html" class="nav-link">Skills</a>
+          <a href="projects.html" class="nav-link">Projects</a>
+          <a href="contact.html" class="nav-link">Contact</a>
+        </nav>
+
+        <div class="flex items-center gap-3">
+          <button 
+            type="button" 
+            class="theme-toggle-btn p-2 rounded-xl text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white bg-slate-100 dark:bg-slate-800/80 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors"
+            title="Toggle theme"
+          >
+            <i data-lucide="sun" class="w-5 h-5 hidden dark:block text-amber-400"></i>
+            <i data-lucide="moon" class="w-5 h-5 block dark:hidden text-indigo-600"></i>
+          </button>
+
+          <button 
+            type="button" 
+            id="mobile-menu-btn" 
+            class="md:hidden p-2 rounded-xl text-slate-600 dark:text-slate-300 bg-slate-100 dark:bg-slate-800"
+          >
+            <i data-lucide="menu" class="w-5 h-5"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="hidden md:hidden border-t border-slate-200/60 dark:border-slate-800/60 bg-white/95 dark:bg-slate-950/95 backdrop-blur-xl px-4 py-4 space-y-2">
+      <a href="index.html" class="mobile-nav-link block px-3 py-2 rounded-lg text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Home</a>
+      <a href="about.html" class="mobile-nav-link block px-3 py-2 rounded-lg text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">About</a>
+      <a href="skills.html" class="mobile-nav-link block px-3 py-2 rounded-lg text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Skills</a>
+      <a href="projects.html" class="mobile-nav-link block px-3 py-2 rounded-lg text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Projects</a>
+      <a href="contact.html" class="mobile-nav-link block px-3 py-2 rounded-lg text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Contact</a>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT: SKILLS -->
+  <main class="flex-1 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 w-full">
+    
+    <!-- Section Header & Controls -->
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10 text-left">
+      <div>
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md text-xs font-semibold bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 mb-3 border border-cyan-500/20">
+          <i data-lucide="zap" class="w-3.5 h-3.5"></i>
+          <span>Keahlian & Penguasaan</span>
+        </div>
+        <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">
+          Tech Stack & Skills
+        </h1>
+        <p class="text-slate-600 dark:text-slate-400 mt-2 text-sm sm:text-base">
+          Visualisasi tingkat kemahiran (5-Level Parallelogram Indicator) pada setiap teknologi.
+        </p>
+      </div>
+
+      <!-- Search Input -->
+      <div class="relative w-full md:w-64">
+        <i data-lucide="search" class="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2"></i>
+        <input 
+          type="text" 
+          id="skill-search-input" 
+          placeholder="Cari skill (misal: Flutter, C#)..." 
+          class="w-full pl-9 pr-4 py-2 rounded-xl text-xs sm:text-sm bg-white/80 dark:bg-slate-900/80 border border-slate-200 dark:border-slate-800 focus:outline-none focus:ring-2 focus:ring-cyan-500/50 text-slate-800 dark:text-slate-100 shadow-sm"
+        />
+      </div>
+    </div>
+
+    <!-- Category Filter Tabs -->
+    <div class="flex flex-wrap items-center gap-2 mb-8">
+      <button 
+        type="button" 
+        data-category="all" 
+        class="skill-filter-btn active px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all bg-indigo-600 text-white dark:bg-cyan-500 dark:text-slate-950 shadow-sm"
+      >
+        Semua Skill (14)
+      </button>
+      <button 
+        type="button" 
+        data-category="mobile-game" 
+        class="skill-filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700"
+      >
+        Mobile & Game Dev (5)
+      </button>
+      <button 
+        type="button" 
+        data-category="web-backend" 
+        class="skill-filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700"
+      >
+        Web & Backend (6)
+      </button>
+      <button 
+        type="button" 
+        data-category="design-3d" 
+        class="skill-filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700"
+      >
+        Design & 3D (3)
+      </button>
+    </div>
+
+    <!-- Parallelogram Skills Grid Container -->
+    <div id="skills-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Diisi otomatis oleh src/js/skills.js -->
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-slate-200/60 dark:border-slate-800/60 py-6 text-center text-xs text-slate-500 dark:text-slate-400">
+    <div class="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-2">
+      <p>© 2026 Wisnu Dwi Haryanto. All rights reserved.</p>
+      <p class="flex items-center gap-1">
+        Built with <span class="text-cyan-500 font-mono">Vanilla JS & Tailwind</span>
+      </p>
+    </div>
+  </footer>
+
+  <script type="module">
+    import './src/js/main.js';
+    import { initSkillsPage } from './src/js/skills.js';
+    document.addEventListener('DOMContentLoaded', () => {
+      initSkillsPage();
+    });
+  </script>
+</body>
+</html>

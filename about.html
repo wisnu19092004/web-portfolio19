@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Me | Wisnu Dwi Haryanto</title>
+  <script>
+    if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  </script>
+  <link rel="stylesheet" href="./src/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-glow-radial">
+
+  <!-- TOP NAVBAR -->
+  <header class="sticky top-0 z-50 glass-nav">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        
+        <a href="index.html" class="flex items-center gap-2.5 group">
+          <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-cyan-500 to-indigo-600 flex items-center justify-center text-white font-bold shadow-md shadow-cyan-500/20 group-hover:scale-105 transition-transform">
+            <span>&lt;/&gt;</span>
+          </div>
+          <span class="font-bold text-lg tracking-tight text-slate-800 dark:text-white">
+            Wisnu<span class="text-cyan-500">.dev</span>
+          </span>
+        </a>
+
+        <nav class="hidden md:flex items-center space-x-1">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="about.html" class="nav-link">About</a>
+          <a href="skills.html" class="nav-link">Skills</a>
+          <a href="projects.html" class="nav-link">Projects</a>
+          <a href="contact.html" class="nav-link">Contact</a>
+        </nav>
+
+        <div class="flex items-center gap-3">
+          <button 
+            type="button" 
+            class="theme-toggle-btn p-2 rounded-xl text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white bg-slate-100 dark:bg-slate-800/80 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors"
+            title="Toggle theme"
+          >
+            <i data-lucide="sun" class="w-5 h-5 hidden dark:block text-amber-400"></i>
+            <i data-lucide="moon" class="w-5 h-5 block dark:hidden text-indigo-600"></i>
+          </button>
+
+          <button 
+            type="button" 
+            id="mobile-menu-btn" 
+            class="md:hidden p-2 rounded-xl text-slate-600 dark:text-slate-300 bg-slate-100 dark:bg-slate-800"
+          >
+            <i data-lucide="menu" class="w-5 h-5"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="hidden md:hidden border-t border-slate-200/60 dark:border-slate-800/60 bg-white/95 dark:bg-slate-950/95 backdrop-blur-xl px-4 py-4 space-y-2">
+      <a href="index.html" class="mobile-nav-link block px-3 py-2 rounded-lg text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Home</a>
+      <a href="about.html" class="mobile-nav-link block px-3 py-2 rounded-lg text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">About</a>
+      <a href="skills.html" class="mobile-nav-link block px-3 py-2 rounded-lg text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Skills</a>
+      <a href="projects.html" class="mobile-nav-link block px-3 py-2 rounded-lg text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Projects</a>
+      <a href="contact.html" class="mobile-nav-link block px-3 py-2 rounded-lg text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Contact</a>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT: ABOUT (Bento Grid) -->
+  <main class="flex-1 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 w-full">
+    
+    <!-- Section Header -->
+    <div class="mb-10 text-left">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md text-xs font-semibold bg-indigo-500/10 text-indigo-600 dark:text-cyan-400 mb-3 border border-indigo-500/20">
+        <i data-lucide="user" class="w-3.5 h-3.5"></i>
+        <span>Profil & Perjalanan</span>
+      </div>
+      <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">
+        Tentang Wisnu Dwi Haryanto
+      </h1>
+      <p class="text-slate-600 dark:text-slate-400 mt-2 max-w-2xl text-sm sm:text-base">
+        Mengenal latar belakang, minat teknologi, prinsip berkarya, serta pendekatan saya dalam membangun aplikasi, game, dan sistem backend.
+      </p>
+    </div>
+
+    <!-- Bento Grid Structure -->
+    <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      
+      <!-- Bento Card 1: Bio Utama (Lebar 2 kolom) -->
+      <div class="md:col-span-2 lg:col-span-3 spotlight-card glass-card rounded-2xl p-7 flex flex-col justify-between">
+        <div>
+          <div class="flex items-center gap-3 mb-4">
+            <div class="p-2.5 rounded-xl bg-cyan-500/10 text-cyan-500">
+              <i data-lucide="sparkle" class="w-6 h-6"></i>
+            </div>
+            <h2 class="text-xl font-bold text-slate-900 dark:text-white">Siapa Saya?</h2>
+          </div>
+          <p class="text-slate-600 dark:text-slate-300 leading-relaxed text-sm sm:text-base mb-4">
+            Halo, saya <strong>Wisnu Dwi Haryanto</strong>. Saya memiliki passion yang tinggi dalam dunia komputasi dan kreasi digital. Fokus utama saya mencakup pengembangan aplikasi mobile multiplatform menggunakan <strong>Flutter & Dart</strong>, perancangan game interaktif dengan <strong>Unity & C#</strong>, pengelolaan sistem basis data & web backend (<strong>CodeIgniter, Laravel, SQL</strong>), serta visual art & prototyping menggunakan <strong>Figma & Krita</strong>.
+          </p>
+          <p class="text-slate-600 dark:text-slate-300 leading-relaxed text-sm sm:text-base">
+            Bagi saya, produk digital yang baik tidak hanya memiliki arsitektur kode yang efisien dan andal, tetapi juga menghadirkan estetika visual serta pengalaman pengguna yang intuitif.
+          </p>
+        </div>
+
+        <div class="flex flex-wrap gap-2 pt-6 mt-4 border-t border-slate-200/60 dark:border-slate-800/60">
+          <span class="text-xs font-semibold px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-600 dark:text-cyan-400">#MobileDeveloper</span>
+          <span class="text-xs font-semibold px-3 py-1 rounded-full bg-indigo-500/10 text-indigo-600 dark:text-indigo-400">#GameDev</span>
+          <span class="text-xs font-semibold px-3 py-1 rounded-full bg-purple-500/10 text-purple-600 dark:text-purple-400">#BackendDev</span>
+          <span class="text-xs font-semibold px-3 py-1 rounded-full bg-pink-500/10 text-pink-600 dark:text-pink-400">#DigitalArtist</span>
+        </div>
+      </div>
+
+      <!-- Bento Card 2: Status & Info Ringkas (1 kolom) -->
+      <div class="md:col-span-1 lg:col-span-1 spotlight-card glass-card rounded-2xl p-7 flex flex-col justify-between">
+        <div>
+          <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-500 flex items-center justify-center mb-4">
+            <i data-lucide="compass" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Kontak Cepat</h3>
+          <ul class="space-y-3 text-xs text-slate-600 dark:text-slate-300">
+            <li class="flex items-start gap-2">
+              <i data-lucide="phone" class="w-4 h-4 text-cyan-500 mt-0.5 shrink-0"></i>
+              <a href="tel:087835776271" class="hover:underline">0878-3577-6271</a>
+            </li>
+            <li class="flex items-start gap-2">
+              <i data-lucide="github" class="w-4 h-4 text-indigo-500 mt-0.5 shrink-0"></i>
+              <a href="https://github.com/wisnu19092004?tab=repositories" target="_blank" class="hover:underline truncate">wisnu19092004</a>
+            </li>
+            <li class="flex items-start gap-2">
+              <i data-lucide="map-pin" class="w-4 h-4 text-rose-500 mt-0.5 shrink-0"></i>
+              <span>Indonesia</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="pt-4 border-t border-slate-200/60 dark:border-slate-800/60">
+          <a href="contact.html" class="text-xs font-semibold text-cyan-600 dark:text-cyan-400 hover:underline flex items-center gap-1">
+            Kirim Pesan <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Bento Card 3: Prinsip Kerja / Workflow (2 kolom) -->
+      <div class="md:col-span-2 lg:col-span-2 spotlight-card glass-card rounded-2xl p-7">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="p-2.5 rounded-xl bg-indigo-500/10 text-indigo-500">
+            <i data-lucide="workflow" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 dark:text-white">Alur & Cara Kerja</h3>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs text-slate-600 dark:text-slate-300">
+          <div class="p-3 rounded-xl bg-slate-100/60 dark:bg-slate-800/60">
+            <span class="font-bold text-slate-900 dark:text-white block mb-1">1. Riset & UI Concept</span>
+            Merancang struktur mockup di Figma dan memetakan alur logika sistem.
+          </div>
+          <div class="p-3 rounded-xl bg-slate-100/60 dark:bg-slate-800/60">
+            <span class="font-bold text-slate-900 dark:text-white block mb-1">2. Clean Code Implement</span>
+            Menulis kode modular di Flutter, C# (Unity), dan framework backend.
+          </div>
+          <div class="p-3 rounded-xl bg-slate-100/60 dark:bg-slate-800/60">
+            <span class="font-bold text-slate-900 dark:text-white block mb-1">3. Uji & Optimalisasi</span>
+            Memastikan query database cepat, frame rate stabil, dan minim bug.
+          </div>
+          <div class="p-3 rounded-xl bg-slate-100/60 dark:bg-slate-800/60">
+            <span class="font-bold text-slate-900 dark:text-white block mb-1">4. Delivery & Iterasi</span>
+            Mendistribusikan produk tepat waktu dan siap menerima feedback.
+          </div>
+        </div>
+      </div>
+
+      <!-- Bento Card 4: Hobi & Minat Visual (2 kolom) -->
+      <div class="md:col-span-1 lg:col-span-2 spotlight-card glass-card rounded-2xl p-7 flex flex-col justify-between">
+        <div>
+          <div class="flex items-center gap-3 mb-4">
+            <div class="p-2.5 rounded-xl bg-pink-500/10 text-pink-500">
+              <i data-lucide="palette" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 dark:text-white">Kreativitas Visual</h3>
+          </div>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
+            Selain programming, saya menyukai proses membuat digital art (Krita), membuat komponen UI/UX (Figma), dan eksplorasi 3D (Blender) untuk asset game & interaksi multimedia.
+          </p>
+        </div>
+
+        <div class="flex items-center justify-between pt-4 border-t border-slate-200/60 dark:border-slate-800/60 text-xs text-slate-500 dark:text-slate-400">
+          <span>Design Tools: Figma • Krita • Blender</span>
+          <a href="skills.html" class="text-indigo-600 dark:text-cyan-400 font-semibold hover:underline">Lihat Level Skill →</a>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-slate-200/60 dark:border-slate-800/60 py-6 text-center text-xs text-slate-500 dark:text-slate-400">
+    <div class="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-2">
+      <p>© 2026 Wisnu Dwi Haryanto. All rights reserved.</p>
+      <p class="flex items-center gap-1">
+        Built with <span class="text-cyan-500 font-mono">Vanilla JS & Tailwind</span>
+      </p>
+    </div>
+  </footer>
+
+  <script type="module" src="./src/js/main.js"></script>
+</body>
+</html>
